@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="flex">
         <NavBar />
-        <main className="ml-52 w-full min-h-screen bg-green-50 p-8">
+        <main className="ml-52 w-full min-h-screen">
           <Routes>
             {/* <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/analytics" element={<Analytics />} />
