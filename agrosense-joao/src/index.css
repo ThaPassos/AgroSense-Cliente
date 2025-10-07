@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Novicento";
+  src: url("/fonts/Novecentosanswide-Normal.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-novicento {
+  font-family: 'Novicento', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
