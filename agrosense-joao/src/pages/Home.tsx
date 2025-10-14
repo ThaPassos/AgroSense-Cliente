@@ -1,5 +1,6 @@
 import grupoDeElementos from "../assets/elementos.png";
 import logoRedonda from "../assets/logoRedonda.png";
+import Baias from "../components/Baias";
 import WeatherCard from "../components/Card";
 import { useWeather } from '../hooks/useWeather';
 
@@ -87,6 +88,19 @@ export default function Home() {
       <div>
         <WeatherCard currentWeather={currentWeather} forecast={forecast} />
       </div>
-    </div>
+
+      <div className="grid grid-cols-[200px_100px_50px] grid-rows-2">
+        <h2 className="text-gray-900 opacity-80 text-[75px] font-bold font-novicento flex justify-center h-[210px] items-center w-[900px] col-start-1">Resumo:</h2>
+        <p className="text-gray-900 opacity-80 text-[23px] font-bold font-novicento col-start-3 row-start-2 w-[900px] flex justify-center">
+          Na última semana, as cinco baias de tomates foram monitoradas por sensores de temperatura e umidade. As condições se mantiveram estáveis, com média de 24–25 °C e 70% de umidade. A produção totalizou 210 kg de tomates, com destaque para a Baia 3, que registrou o maior rendimento (46 kg). O sistema automatizado garantiu bom controle do microclima, favorecendo a qualidade dos frutos.
+        </p>
+      </div>
+
+      <div>
+        < Baias />
+      </div>
+
+
+      </div>
   );
 }

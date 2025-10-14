@@ -13,7 +13,7 @@ export default function NavBar() {
   const links = [
     {
       to: "/dashboard",
-      label: "Painel",
+      label: "Painéis",
       icon: <LayoutDashboard size={20} />,
       subLinks: [
         { to: "/dashboard/baia1", label: "Baia 1" },
@@ -23,8 +23,13 @@ export default function NavBar() {
     },
     {
       to: "/analytics",
-      label: "Análise",
+      label: "Análises",
       icon: <BarChart2 size={20} />,
+      subLinks: [
+        { to: "/analytics/baia1", label: "Baia 1" },
+        { to: "/analytics/baia2", label: "Baia 2" },
+        { to: "/analytics/baia3", label: "Baia 3" },
+      ]
     },
   ];
 
@@ -67,7 +72,7 @@ export default function NavBar() {
                   <NavLink
                     key={sub.to}
                     to={sub.to}
-                    className="text-sm text-[#ebe7d6b3] hover:text-[#55990d] transition translate-x-12 translate-y-8"
+                    className="text-sm text-[#ebe7d6b3] hover:text-[#55990d] transition translate-x-12 translate-y-5"
                   >
                     {sub.label}
                   </NavLink>
