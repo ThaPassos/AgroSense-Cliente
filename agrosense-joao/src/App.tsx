@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 // import Dashboard from "./pages/Dashboard";
 // import Analytics from "./pages/Analytics";
@@ -11,7 +10,6 @@ function App() {
   return (
     <Router>
       <div className="flex">
-        <NavBar />
         <main className="ml-52 w-full min-h-screen">
           <Routes>
             {/* <Route path="/dashboard" element={<Dashboard />} />
