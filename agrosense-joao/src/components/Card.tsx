@@ -25,18 +25,18 @@ const WeatherCard = ({ currentWeather, forecast }: WeatherCardProps) => {
 
   return (
     <div className="w-full flex justify-center items-end p-4 font-novicento font-normal ">
-      <div className="flex flex-row max-w-3xl w-full overflow-hidden h-[380px]">
-        <div className="w-[49.5%] rounded-l-lg p-6 text-[#ebe7d6] flex flex-col justify-between relative z-10 translate-x-16">
+      <div className="flex flex-row max-w-3xl w-full overflow-hidden h-[220px] lg:h-[380px]">
+        <div className="lg:w-[49.5%] w-[260px] rounded-lg lg:rounded-lg p-6 text-[#ebe7d6] flex flex-col justify-between relative z-10 lg:translate-x-16 translate-x-5">
           <div className="rounded-lg w-full h-[380px] bg-[#445816] absolute tr"></div>
 
           <div className="relative z-10">
-            <h2 className="font-bold text-[30px] leading-none pb-1 capitalize absolute top-[120%] left-[10%]">
+            <h2 className="font-bold lg:text-[30px] text-[22px] leading-none pb-1 capitalize absolute top-[120%] left-[10%]">
               {dayName}
             </h2>
-            <h3 className="text-[18px] leading-none pb-3 opacity-90 absolute top-[350%] left-[10%]">
+            <h3 className="text-[18px] leading-none pb-3 opacity-90 lg:absolute lg:top-[350%] absolute top-[280%] left-[10%]">
               {dateStr}
             </h3>
-            <h3 className="text-[18px] leading-none pb-3 opacity-90 absolute top-[500%] left-[10%]">
+            <h3 className="text-[18px] leading-none pb-3 opacity-90 absolute lg:top-[500%] top-[400%] left-[10%]">
               {currentWeather.name}
             </h3>
             <p className="flex items-center text-sm opacity-0 ">,</p>
@@ -49,43 +49,43 @@ const WeatherCard = ({ currentWeather, forecast }: WeatherCardProps) => {
               viewBox="0 0 129 129"
               enableBackground="new 0 0 129 129"
             ></svg>
-            <strong className="leading-none text-7xl block font-bold absolute top-[-180%] left-[10%]">
+            <strong className="leading-none lg:text-7xl text-[56px] block font-bold absolute lg:top-[-180%] top-[-100%] left-[10%]">
               {Math.round(currentWeather.main.temp)}°C
             </strong>
-            <b className="text-xl block font-semibold capitalize absolute top-[-40%] left-[10%]">
+            <b className="lg:text-xl text-[23px] block font-semibold capitalize absolute lg:top-[-40%]  top-[0%] left-[10%]">
               {currentWeather.weather[0].description}
             </b>
           </div>
         </div>
 
         <div className=" text-[#ebe7d6] p-6 rounded-r-lg flex flex-col justify-between ">
-          <div className="absolute top-[59%] right-[20%] rounded-lg w-[28%] h-[360px] bg-[#445816b6] z-[-4]"></div>
+          <div className="absolute top-[59%] lg:top-[61%] right-[20%] rounded-lg lg:w-[28%] w-[250px] lg:h-[360px] h-[220px] bg-[#445816b6] z-[-4] translate-x-4.5 translate-y-[-15px]"></div>
           <div className="space-y-3">
-            <div className="absolute top-[65%] right-[34%]">
-              <div className="font-bold uppercase text-[16px] tracking-wide">
+            <div className="absolute lg:top-[65%] top-[66%] lg:right-[34%] right-[52%]">
+              <div className="font-bold uppercase lg:text-[16px] text-[14px] tracking-wide">
                 Precipitação
               </div>
-              <div className="text-[17px]">
+              <div className="lg:text-[17px]">
                 {precipitation > 0 ? `${precipitation.toFixed(1)} mm` : "10 %"}
               </div>
             </div>
-            <div className="absolute top-[72%] right-[37%]">
-              <div className="font-bold uppercase text-[16px] tracking-wide">
+            <div className="absolute lg:top-[72%] lg:right-[37%] top-[74%] right-[66%]">
+              <div className="font-bold uppercase lg:text-[16px] text-[12px] tracking-wide">
                 Umidade
               </div>
               <div className="text-[17px]">
                 {currentWeather.main.humidity} %
               </div>
             </div>
-            <div className="absolute top-[80%] right-[29%]">
-              <div className="font-bold uppercase text-[16px] tracking-wide">
+            <div className="absolute lg:top-[80%] top-[82%] lg:right-[29%] right-[37%]">
+              <div className="font-bold uppercase lg:text-[16px] text-[12px] tracking-wide">
                 Velocidade do vento
               </div>
               <div className="text-[17px]">{windSpeed} Mph</div>
             </div>
           </div>
 
-          <div className="flex justify-end items-center w-full absolute top-[90%] right-[24%]">
+          <div className="hidden lg:flex lg:justify-end lg:items-center lg:w-full lg:absolute lg:top-[90%] lg:right-[24%]">
             <div className="flex flex-row gap-2">
               {dailyForecasts.map((day, index) => {
                 const dayDate = new Date(day.dt * 1000);

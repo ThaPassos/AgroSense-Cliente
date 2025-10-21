@@ -12,23 +12,23 @@ export default function NavBar() {
 
   const links = [
     {
-      to: "/dashboard",
+      to: "/paineis",
       label: "Painéis",
       icon: <LayoutDashboard size={20} />,
       subLinks: [
-        { to: "/dashboard/baia1", label: "Baia 1" },
-        { to: "/dashboard/baia2", label: "Baia 2" },
-        { to: "/dashboard/baia3", label: "Baia 3" },
+        { to: "/paineis/baia1", label: "Baia 1" },
+        { to: "/paineis/baia2", label: "Baia 2" },
+        { to: "/paineis/baia3", label: "Baia 3" },
       ],
     },
     {
-      to: "/analytics",
+      to: "/analises",
       label: "Análises",
       icon: <BarChart2 size={20} />,
       subLinks: [
-        { to: "/analytics/baia1", label: "Baia 1" },
-        { to: "/analytics/baia2", label: "Baia 2" },
-        { to: "/analytics/baia3", label: "Baia 3" },
+        { to: "/analises/baia1", label: "Baia 1" },
+        { to: "/analises/baia2", label: "Baia 2" },
+        { to: "/analises/baia3", label: "Baia 3" },
       ]
     },
   ];

@@ -1,23 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-// import Dashboard from "./pages/Dashboard";
-// import Analytics from "./pages/Analytics";
-// import Harvest from "./pages/Harvest";
-// import Schedules from "./pages/Schedules";
-// import Payments from "./pages/Payments";
+import PainelBaia1 from "./pages/paineis/PainelBaia1";
+import AnaliseBaia1 from "./pages/analises/AnaliseBaia1";
+
 
 function App() {
   return (
     <Router>
       <div className="flex">
-        <main className="ml-52 w-full min-h-screen">
+        
+        <main className="ml-52 w-full min-h-screen text-[#445816] p-6">
           <Routes>
-            {/* <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/harvest" element={<Harvest />} />
-            <Route path="/schedules" element={<Schedules />} />
-            <Route path="/payments" element={<Payments />} /> */}
             <Route path="/" element={<Home />} />
+
+            <Route path="/paineis/baia1" element={<PainelBaia1 />} />
+
+            <Route path="/analises/baia1" element={<AnaliseBaia1 />} />
+
           </Routes>
         </main>
       </div>
