@@ -1,7 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { useState, Suspense} from 'react'
 import Home from "./pages/Home";
 import PainelBaia1 from "./pages/paineis/PainelBaia1";
 import AnaliseBaia1 from "./pages/analises/AnaliseBaia1";
+import './App.css'
+
+import { Canvas } from '@react-three/fiber'
+import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 
 
 function App() {

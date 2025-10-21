@@ -1,14 +1,14 @@
 import NavBar from "../../components/NavBar";
 import grupoDeElementos from "../../assets/elementos.png";
 import logoRedonda from "../../assets/logoRedonda.png";
+import MocoNaPlantacao from "../../assets/MoçoNaPlantação.png";
+import LineBarAreaComposedChart from "../../components/GraficoArea";
 
-
-export default function PainelBaia1 (){
-
-    return(
-        <div className="overflow-x-hidden overflow-y-hidden ">
+export default function PainelBaia1() {
+  return (
+    <div className="overflow-x-hidden overflow-y-hidden ">
       <div className="lg:block hidden">
-      <NavBar />
+        <NavBar />
       </div>
 
       <div className="relative w-full lg:h-80 h-35 grid lg:grid-cols-[68.5%_31.5%] grid-cols-[55.5%_44.5%]">
@@ -34,6 +34,17 @@ export default function PainelBaia1 (){
         />
       </div>
 
-        </div>
-    )
+      <div className="relative flex justify-center items-center lg:w-[2500px] lg:h-[380px]">
+        <img
+          src={MocoNaPlantacao}
+          alt=""
+          className="lg:w-[400px] object-cover rounded-lg"
+        />
+      </div>
+
+      <div className="flex justify-center w-[1200px]">
+        <LineBarAreaComposedChart />
+      </div>
+    </div>
+  );
 }
