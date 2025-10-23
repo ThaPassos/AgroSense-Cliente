@@ -72,11 +72,11 @@ export default function Home() {
         />
       </div>
 
-      <div className="grid grid-cols-[200px_100px_50px] grid-rows-2">
-        <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[45px] font-bold font-novicento flex justify-center lg:h-[210px] h-[500px] items-center lg:w-[900px] col-start-1">
+      <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[45px] font-bold font-novicento flex justify-center lg:h-[210px] h-[300px] items-end lg:w-[900px] w-[250px]">
           Resumo:
         </h2>
-        <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:col-start-3 row-start-2 lg:w-[900px] w-[270px] flex justify-center">
+        <div className="flex justify-end lg:w-[1200px]">
+            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[280px] lg:h-[250px] h-[500px]">
           Na última semana, as cinco baias de tomates foram monitoradas por
           sensores de temperatura e umidade. As condições se mantiveram
           estáveis, com média de 24–25 °C e 70% de umidade. A produção totalizou
@@ -84,7 +84,7 @@ export default function Home() {
           rendimento (46 kg). O sistema automatizado garantiu bom controle do
           microclima, favorecendo a qualidade dos frutos.
         </p>
-      </div>
+        </div>
 
       <h2 className="text-gray-900 opacity-80 lg:text-[75px] font-bold font-novicento flex justify-center lg:h-[210px] items-center lg:w-[1345px] col-start-1">
           Controle das baias:

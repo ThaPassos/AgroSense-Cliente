@@ -2,7 +2,11 @@ import NavBar from "../../components/NavBar";
 import grupoDeElementos from "../../assets/elementos.png";
 import logoRedonda from "../../assets/logoRedonda.png";
 import MocoNaPlantacao from "../../assets/MoçoNaPlantação.png";
-import LineBarAreaComposedChart from "../../components/GraficoArea";
+import PainelResumo from "../../components/PainelResumo.tsx"
+import IoTPanel from "../../components/PainelResumo.tsx";
+import GraficoArea from "../../components/GraficoArea.tsx";
+// import LineBarAreaComposedChart from "../../components/GraficoArea";
+// import ModelViewer3D from "../../components/Pimenta3D";
 
 export default function PainelBaia1() {
   return (
@@ -34,17 +38,42 @@ export default function PainelBaia1() {
         />
       </div>
 
-      <div className="relative flex justify-center items-center lg:w-[2500px] lg:h-[380px]">
+      <div className="lg:relative lg:flex lg:justify-center lg:items-center lg:w-[2450px] lg:h-[380px] ">
         <img
           src={MocoNaPlantacao}
           alt=""
-          className="lg:w-[400px] object-cover rounded-lg"
+          className="lg:w-[400px] lg:object-cover lg:rounded-lg hidden lg:block"
         />
       </div>
 
-      <div className="flex justify-center w-[1200px]">
-        <LineBarAreaComposedChart />
-      </div>
+        {/* <div className="absolute top-[520px] left-[900px]">
+          <ModelViewer3D 
+          modelPath="/pimenta.glb"
+          scale={0.18}
+          position={[0, -1, 0]}
+          className=""
+        />
+        </div> */}
+
+        <div className="lg:absolute lg:top-[350px] lg:left-[350px]">
+          < IoTPanel />
+        </div>
+       
+       <div>
+        <div className="flex justify-center lg:w-[2200px] items-end lg:h-[70px]">
+          <h2 className="font-novicento text-black lg:text-[28px]">Últimas 6 Horas:</h2>
+        </div>
+        <div className="lg:absolute lg:top-[800px] lg:left-[960px] lg:w-[500px]">
+            <GraficoArea/>
+        </div>
+
+       </div>
+
+       <footer className="lg:h-[450px] h-[100px]">
+       </footer>
+
+        
+       
     </div>
   );
 }
