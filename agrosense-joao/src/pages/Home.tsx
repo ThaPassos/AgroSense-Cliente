@@ -86,8 +86,8 @@ export default function Home() {
         </p>
         </div>
 
-      <h2 className="text-gray-900 opacity-80 lg:text-[75px] font-bold font-novicento flex justify-center lg:h-[210px] items-center lg:w-[1345px] col-start-1">
-          Controle das baias:
+      <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[27px] font-bold font-novicento flex justify-end lg:h-[210px] h-[10px] items-end lg:w-[900px] w-[280px]">
+          Controle das baias
         </h2>
       <div className="flex justify-center lg:w-[1650px] font-novicento">
         <div className="grid grid-cols-2 grid-rows-3 lg:w-[700px] justify-center lg:gap-x-20 lg:gap-y-9">

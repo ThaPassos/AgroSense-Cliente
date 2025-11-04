@@ -2,11 +2,8 @@ import NavBar from "../../components/NavBar";
 import grupoDeElementos from "../../assets/elementos.png";
 import logoRedonda from "../../assets/logoRedonda.png";
 import MocoNaPlantacao from "../../assets/MoçoNaPlantação.png";
-import PainelResumo from "../../components/PainelResumo.tsx"
 import IoTPanel from "../../components/PainelResumo.tsx";
 import GraficoArea from "../../components/GraficoArea.tsx";
-// import LineBarAreaComposedChart from "../../components/GraficoArea";
-// import ModelViewer3D from "../../components/Pimenta3D";
 
 export default function PainelBaia1() {
   return (

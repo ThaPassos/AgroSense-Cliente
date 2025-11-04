@@ -1,11 +1,11 @@
 import NavBar from "../../components/NavBar";
 import grupoDeElementos from "../../assets/elementos.png";
 import logoRedonda from "../../assets/logoRedonda.png";
-import MocoNaPlantacao from "../../assets/MoçoNaPlantação.png";
-
 import { GraficoUmidadeAr } from "../../components/GraficoUmidadeAr";
 import { GraficoUmidadeSolo } from "../../components/GraficoUmidadeSolo";
 import { GraficoTemperatura } from "../../components/GraficoTemperatura";
+import { GraficoLuminosidade } from "../../components/GraficoLuminosidade";
+import { GraficoChuva } from "../../components/GraficoChuva";
 
 
 export default function AnaliseBaia1() {
@@ -38,28 +38,11 @@ export default function AnaliseBaia1() {
         />
       </div>
 
-      {/* <div className="relative flex justify-center items-center lg:w-[2500px] lg:h-[380px]">
-        <img
-          src={MocoNaPlantacao}
-          alt=""
-          className="lg:w-[400px] object-cover rounded-lg w-[]"
-        />
-      </div> */}
-
-      {/* <div className="absolute top-[520px] left-[900px]">
-          <ModelViewer3D 
-          modelPath="/pimenta.glb"
-          scale={0.18}
-          position={[0, -1, 0]}
-          className=""
-        />
-        </div> */}
-
-        <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[45px] font-bold font-novicento flex justify-center lg:h-[210px] h-[500px] items-center lg:w-[1250px]">
+        <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[32px] font-bold font-novicento flex justify-center lg:h-[210px] h-[120px] items-center lg:w-[1250px] w-[330px]">
           Análise das baias
         </h2>
         <div className="flex justify-end lg:w-[1200px]">
-            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[270px] lg:h-[250px] ">
+            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[290px] lg:h-[250px] ">
           Ter uma análise completa de uma plantação, com o auxílio de gráficos e
           dados precisos, é essencial para garantir uma produção eficiente,
           sustentável e equilibrada com o meio ambiente. Monitorar fatores como
@@ -73,9 +56,9 @@ export default function AnaliseBaia1() {
         </div>
     
         <div>
-            <h3 className="text-gray-900 opacity-80 lg:text-[50px] text-[45px] font-bold font-novicento flex justify-center lg:h-[210px] h-[500px] items-center lg:w-[840px]">Gráficos</h3>
+            <h3 className="text-gray-900 opacity-80 lg:text-[50px] text-[45px] font-bold font-novicento flex justify-center lg:h-[210px] h-[180px] items-center lg:w-[840px] w-[270px]">Gráficos</h3>
             <div className="flex justify-end lg:w-[1200px] lg:h-[200px]">
-            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[270px] lg:h-[220px] ">
+            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[290px] lg:h-[220px] h-[300px]">
             Acomanhe os dados da sua baia durante uma semana, quize dias e um mês, observando cada dado indivuldualmente, ou seja, a umidade do ar e do solo, a variação da temperatura, quantidade de chuva recebidade e luminosidade que chega na sua plantação.
             </p>
             </div>
@@ -98,7 +81,18 @@ export default function AnaliseBaia1() {
             <GraficoTemperatura />
             </div>
         </div>
+
+        <div className="flex justify-end lg:w-[1300px]">
+            <div className="lg:w-[850px]">
+            <GraficoLuminosidade />
+            </div>
+        </div>
         
+        <div className="flex justify-end lg:w-[1300px]">
+            <div className="lg:w-[850px]">
+            <GraficoChuva />
+            </div>
+        </div>
 
     </div>
   );

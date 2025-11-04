@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Area,
   AreaChart,
@@ -6,21 +7,20 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Thermometer } from "lucide-react";
+import { Sun } from "lucide-react";
 import { useSensorHistorico } from "../hooks/useSensorHistorico";
-import { useState } from "react";
 
 type Period = "weekly" | "biweekly" | "monthly";
 
-export const GraficoTemperatura = () => {
+export const GraficoLuminosidade = () => {
   const [period, setPeriod] = useState<Period>("weekly");
   const { dadosDiarios, loading } = useSensorHistorico(period);
 
   if (loading) return <p>Carregando dados...</p>;
 
-  const dadosTemperatura = dadosDiarios.map((d) => ({
+  const dadosLuminosidade = dadosDiarios.map((d) => ({
     date: d.date,
-    value: Number(d.temperatura) || 0,
+    value: Number(d.luzPct) || 0,
   }));
 
   return (
@@ -29,13 +29,16 @@ export const GraficoTemperatura = () => {
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-accent/10">
-              <Thermometer className="h-6 w-6 text-[#8b3115]" />
+              <Sun className="h-6 w-6 text-[#e2cc36]" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-[#8b3115]">Temperatura</h2>
-              <p className="text-sm text-[#8b3115]">Monitoramento da temperatura ambiente</p>
+              <h2 className="text-2xl font-bold text-[#e2cc36]">Luminosidade</h2>
+              <p className="text-sm text-[#e2cc36]">
+                Monitoramento da luminosidade ambiente
+              </p>
             </div>
           </div>
+
           <div className="flex gap-5 p-1 rounded-lg">
             {["weekly", "biweekly", "monthly"].map((p) => (
               <button
@@ -43,8 +46,8 @@ export const GraficoTemperatura = () => {
                 onClick={() => setPeriod(p as Period)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                   period === p
-                    ? "bg-background text-[#8b3115]"
-                    : "text-[#8b3115]"
+                    ? "bg-background text-[#e2cc36]"
+                    : "text-[#e2cc36]"
                 }`}
               >
                 {p === "weekly" ? "Semanal" : p === "biweekly" ? "Quinzenal" : "Mensal"}
@@ -53,17 +56,19 @@ export const GraficoTemperatura = () => {
           </div>
         </div>
       </div>
+
       <div className="p-6">
         <ResponsiveContainer width="100%" height={300}>
-          <AreaChart data={dadosTemperatura}>
+          <AreaChart data={dadosLuminosidade}>
             <defs>
-              <linearGradient id="temperatureGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#8b3115" stopOpacity={0.8} />
-                <stop offset="100%" stopColor="#8b3115" stopOpacity={0.1} />
+              <linearGradient id="LuminosidadeGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#e2cc36" stopOpacity={0.8} />
+                <stop offset="100%" stopColor="#e2cc36" stopOpacity={0.1} />
               </linearGradient>
             </defs>
+
             <XAxis dataKey="date" />
-            <YAxis domain={[0, 50]} />
+            <YAxis domain={[0, 100]} />
             <Tooltip
               contentStyle={{
                 backgroundColor: "hsl(var(--card))",
@@ -71,19 +76,19 @@ export const GraficoTemperatura = () => {
                 borderRadius: "var(--radius)",
               }}
               labelStyle={{
-                color: "#8b3115",
+                color: "#e2cc36",
                 fontWeight: 600,
               }}
               formatter={(value: number) => {
                 const formattedValue = typeof value === 'number' ? value.toFixed(1) : '0';
-                return [`${formattedValue}°C`, "Temperatura"];
+                return [`${formattedValue}%`, "Luminosidade"];
               }}
             />
             <Area
               type="monotone"
               dataKey="value"
-              stroke="#8b3115"
-              fill="url(#temperatureGradient)"
+              stroke="#e2cc36"
+              fill="url(#LuminosidadeGradient)"
               strokeWidth={2}
             />
           </AreaChart>
