@@ -29,7 +29,7 @@ export interface DailyAverage {
   luzPct: number;
 }
 
-export function useSensorHistorico(period: "weekly" | "biweekly" | "monthly" | "last6hours" | "last5hours") {
+export function useSensorHistorico(period: "weekly" | "biweekly" | "monthly" | "last6hours") {
   const [dados, setDados] = useState<SensorData[]>([]);
   const [dadosProcessados, setDadosProcessados] = useState<HourlyAverage[]>([]);
   const [dadosDiarios, setDadosDiarios] = useState<DailyAverage[]>([]);
@@ -46,7 +46,6 @@ export function useSensorHistorico(period: "weekly" | "biweekly" | "monthly" | "
         if (period === "biweekly") endpoint = "/sensores/quinzena";
         if (period === "monthly") endpoint = "/sensores/mes";
         if (period === "last6hours") endpoint = "/sensores/ultimas6h";
-        if (period === "last5hours") endpoint = "/sensores/ultimas6h";
 
         console.log("Buscando dados do endpoint:", endpoint);
         const response = await api.get<SensorData[]>(endpoint);
@@ -59,8 +58,7 @@ export function useSensorHistorico(period: "weekly" | "biweekly" | "monthly" | "
 
         setDados(response.data);
 
-        // Processar dados baseado no período
-        if (period === "last6hours" || period === "last5hours") {
+        if (period === "last6hours") {
           const horas = period === "last6hours" ? 6 : 5;
           const processados = calcularMediasPorHora(response.data, horas);
           console.log("Dados processados por hora:", processados);
@@ -83,8 +81,7 @@ export function useSensorHistorico(period: "weekly" | "biweekly" | "monthly" | "
 
     fetchHistorico();
 
-    // Atualizar a cada 3 minutos para períodos de curto prazo
-    if (period === "last6hours" || period === "last5hours") {
+    if (period === "last6hours") {
       const interval = setInterval(fetchHistorico, 180000); 
       return () => clearInterval(interval);
     }
@@ -112,7 +109,6 @@ function calcularMediasPorHora(dados: SensorData[], numHoras: number): HourlyAve
     const horaInicio = new Date(horaFim);
     horaInicio.setHours(horaInicio.getHours() - 1);
 
-    // Filtrar dados dentro do intervalo de hora
     const dadosHora = dados.filter((d) => {
       try {
         const dataRegistro = new Date(d.dataRegistro);
@@ -152,7 +148,7 @@ function calcularMediasPorHora(dados: SensorData[], numHoras: number): HourlyAve
       console.log(`Médias para ${nomeHora}:`, media);
       resultado.push(media);
     } else {
-      // Sem dados para esta hora - criar entrada vazia
+      
       const nomeHora = i === 0 ? "Última hora" : `Há ${i}h`;
       console.log(`Sem dados para ${nomeHora}`);
       resultado.push({
@@ -175,7 +171,6 @@ function calcularMediasPorDia(dados: SensorData[]): DailyAverage[] {
     return [];
   }
 
-  // Agrupar dados por dia
   const dadosPorDia = dados.reduce((acc, dado) => {
     try {
       const date = new Date(dado.dataRegistro);
@@ -197,7 +192,6 @@ function calcularMediasPorDia(dados: SensorData[]): DailyAverage[] {
 
   console.log("Dados agrupados por dia:", dadosPorDia);
 
-  // Calcular média de cada dia
   const mediasDiarias = Object.entries(dadosPorDia).map(([dia, registros]) => {
     const soma = registros.reduce(
       (acc, r) => ({
@@ -222,7 +216,6 @@ function calcularMediasPorDia(dados: SensorData[]): DailyAverage[] {
     };
   });
 
-  // Ordenar por data
   return mediasDiarias.sort((a, b) => {
     const [diaA, mesA] = a.date.split("/").map(Number);
     const [diaB, mesB] = b.date.split("/").map(Number);

@@ -3,7 +3,6 @@ import type { WeatherData, ForecastData } from '../types/weather';
 
 const API_KEY = 'dee3f902ad71b3766cf02cf4cf4b85f2';
 
-// Dados genéricos de Brasília como fallback
 const DEFAULT_WEATHER: WeatherData = {
   coord: { lon: -47.9292, lat: -15.7801 },
   weather: [{ id: 800, main: 'Clear', description: 'céu limpo', icon: '01d' }],
@@ -68,7 +67,7 @@ export const useWeather = () => {
         setForecast(forecastData);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Erro desconhecido');
-        // Mantém os dados default em caso de erro
+        
       } finally {
         setLoading(false);
       }

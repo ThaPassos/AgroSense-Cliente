@@ -8,9 +8,7 @@ import GraficoArea from "../../components/GraficoArea.tsx";
 export default function PainelBaia1() {
   return (
     <div className="overflow-x-hidden overflow-y-hidden ">
-      <div className="lg:block hidden">
-        <NavBar />
-      </div>
+      <NavBar />
 
       <div className="relative w-full lg:h-80 h-35 grid lg:grid-cols-[68.5%_31.5%] grid-cols-[55.5%_44.5%]">
         <div className="bg-[rgb(98,121,49)] relative">
@@ -43,14 +41,6 @@ export default function PainelBaia1() {
         />
       </div>
 
-        {/* <div className="absolute top-[520px] left-[900px]">
-          <ModelViewer3D 
-          modelPath="/pimenta.glb"
-          scale={0.18}
-          position={[0, -1, 0]}
-          className=""
-        />
-        </div> */}
 
         <div className="lg:absolute lg:top-[350px] lg:left-[350px]">
           < IoTPanel />

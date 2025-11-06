@@ -5,10 +5,6 @@ import PainelBaia1 from "./pages/paineis/PainelBaia1";
 import AnaliseBaia1 from "./pages/analises/AnaliseBaia1";
 import './App.css'
 
-import { Canvas } from '@react-three/fiber'
-import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
-
-
 function App() {
   return (
     <Router>

@@ -11,9 +11,7 @@ import { GraficoChuva } from "../../components/GraficoChuva";
 export default function AnaliseBaia1() {
   return (
     <div className="overflow-x-hidden overflow-y-hidden font-novicento h-full">
-      <div className="lg:block hidden">
-        <NavBar />
-      </div>
+      <NavBar />
 
       <div className="relative w-full lg:h-80 h-35 grid lg:grid-cols-[68.5%_31.5%] grid-cols-[55.5%_44.5%]">
         <div className="bg-[rgb(98,121,49)] relative">
@@ -59,7 +57,7 @@ export default function AnaliseBaia1() {
             <h3 className="text-gray-900 opacity-80 lg:text-[50px] text-[45px] font-bold font-novicento flex justify-center lg:h-[210px] h-[180px] items-center lg:w-[840px] w-[270px]">Gráficos</h3>
             <div className="flex justify-end lg:w-[1200px] lg:h-[200px]">
             <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[290px] lg:h-[220px] h-[300px]">
-            Acomanhe os dados da sua baia durante uma semana, quize dias e um mês, observando cada dado indivuldualmente, ou seja, a umidade do ar e do solo, a variação da temperatura, quantidade de chuva recebidade e luminosidade que chega na sua plantação.
+            Acompanhe os dados da sua baia durante uma semana, quize dias e um mês, observando cada dado indivuldualmente, ou seja, a umidade do ar e do solo, a variação da temperatura, quantidade de chuva recebidade e luminosidade que chega na sua plantação.
             </p>
             </div>
         </div>

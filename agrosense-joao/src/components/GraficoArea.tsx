@@ -2,7 +2,7 @@ import { ComposedChart, Line, Area, Bar, XAxis, YAxis, Tooltip, Legend, Scatter,
 import { useSensorHistorico } from '../hooks/useSensorHistorico';
 
 const GraficoArea = () => {
-  const { dadosProcessados, loading, error } = useSensorHistorico("last5hours");
+  const { dadosProcessados, loading, error } = useSensorHistorico("last6hours");
 
   if (loading) {
     return (

@@ -1,4 +1,3 @@
-// src/hooks/useSensorTempoReal.ts
 import { useEffect, useState } from "react";
 import { api } from "../api/api";
 

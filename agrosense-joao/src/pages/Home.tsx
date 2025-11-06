@@ -16,9 +16,7 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden overflow-y-hidden ">
-      <div className="lg:block hidden">
       <NavBar />
-      </div>
 
       <div className="relative w-full lg:h-80 h-35 grid lg:grid-cols-[68.5%_31.5%] grid-cols-[55.5%_44.5%]">
         <div className="bg-[rgb(98,121,49)] relative">
@@ -76,7 +74,7 @@ export default function Home() {
           Resumo:
         </h2>
         <div className="flex justify-end lg:w-[1200px]">
-            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[280px] lg:h-[250px] h-[500px]">
+            <p className="text-gray-900 opacity-80 lg:text-[23px] text-[17px] font-bold font-novicento lg:w-[900px] w-[280px] lg:h-[200px] h-[450px]">
           Na última semana, as cinco baias de tomates foram monitoradas por
           sensores de temperatura e umidade. As condições se mantiveram
           estáveis, com média de 24–25 °C e 70% de umidade. A produção totalizou
@@ -86,68 +84,87 @@ export default function Home() {
         </p>
         </div>
 
-      <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[27px] font-bold font-novicento flex justify-end lg:h-[210px] h-[10px] items-end lg:w-[900px] w-[280px]">
+      <div className="lg:hidden flex h-[50px]">
+        <h2 className="text-gray-900 opacity-80 lg:text-[75px] text-[27px] font-bold font-novicento flex justify-end lg:h-[210px] h-[18px] items-end lg:w-[1030px] w-[280px]">
           Controle das baias
         </h2>
-      <div className="flex justify-center lg:w-[1650px] font-novicento">
-        <div className="grid grid-cols-2 grid-rows-3 lg:w-[700px] justify-center lg:gap-x-20 lg:gap-y-9">
+      </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px]">
+      <h2 className="lg:flex hidden text-gray-900 opacity-80 lg:text-[75px] text-[27px] font-bold font-novicento justify-end lg:h-[260px] h-[50px] items-end lg:w-[1030px] w-[280px]">
+          Controle das baias
+        </h2>
+      
+      <div className="flex justify-center lg:w-[1650px] font-novicento">
+        <div className="grid grid-cols-2 grid-rows-3 lg:w-[700px] justify-center lg:gap-x-20 lg:gap-y-9 gap-y-8 gap-x-2">
+
+          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px] h-[100px] w-[150px]">
             <h3 className="lg:text-[35px] font-semibold text-gray-900 font-novicento lg:w-[260px]">Baia 1</h3>
             <div className="flex items-start lg:w-[310px]">
-              <img src={elementoPlanta} className="lg:w-[150px]"/>
-              <div className="lg:w-[300px] flex justify-center content-center">
-              <p className="bg-[rgba(98,121,49,0.27)] rounded-2xl lg:w-[120px] lg:h-[40px] flex items-center justify-center">Ativada</p>
+              <img src={elementoPlanta} className="w-[65px] lg:w-[150px]"/>
+              <div className=" lg:w-[300px] flex justify-center items-center h-[60px] content-center">
+                <div className="bg-[rgba(98,121,49,0.27)] rounded-2xl flex h-[35px] justify-between items-center">
+                  <p className="lg:w-[120px] w-[65px] lg:h-[40px] lg:text-[20px] text-[14px] flex items-center justify-center">Ativada</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px]">
+          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px] h-[100px] w-[150px]">
             <h3 className="lg:text-[35px] font-semibold text-gray-900 font-novicento lg:w-[260px]">Baia 2</h3>
             <div className="flex items-start lg:w-[310px]">
-              <img src={elementoPlanta} className="lg:w-[150px]"/>
-              <div className="lg:w-[300px] flex justify-center content-center">
-              <p className="bg-gray-100 rounded-2xl lg:w-[120px] lg:h-[40px] flex items-center justify-center">Desativada</p>
+              <img src={elementoPlanta} className="w-[65px] lg:w-[150px]"/>
+              <div className=" lg:w-[300px] flex justify-center items-center h-[60px] content-center">
+                <div className="bg-gray-100 rounded-2xl flex h-[35px] justify-between items-center">
+                  <p className="lg:w-[120px] w-[80px] lg:h-[40px] lg:text-[20px] text-[14px] flex items-center justify-center">Desativada</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px]">
+          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px] h-[100px] w-[150px]">
             <h3 className="lg:text-[35px] font-semibold text-gray-900 font-novicento lg:w-[260px]">Baia 3</h3>
             <div className="flex items-start lg:w-[310px]">
-              <img src={elementoPlanta} className="lg:w-[150px]"/>
-              <div className="lg:w-[300px] flex justify-center content-center">
-              <p className="bg-gray-100 rounded-2xl lg:w-[120px] lg:h-[40px] flex items-center justify-center">Desativada</p>
+              <img src={elementoPlanta} className="w-[65px] lg:w-[150px]"/>
+              <div className=" lg:w-[300px] flex justify-center items-center h-[60px] content-center">
+                <div className="bg-gray-100 rounded-2xl flex h-[35px] justify-between items-center">
+                  <p className="lg:w-[120px] w-[80px] lg:h-[40px] lg:text-[20px] text-[14px] flex items-center justify-center">Desativada</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px]">
+          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px] h-[100px] w-[150px]">
             <h3 className="lg:text-[35px] font-semibold text-gray-900 font-novicento lg:w-[260px]">Baia 4</h3>
             <div className="flex items-start lg:w-[310px]">
-              <img src={elementoPlanta} className="lg:w-[150px]"/>
-              <div className="lg:w-[300px] flex justify-center content-center">
-              <p className="bg-gray-100 rounded-2xl lg:w-[120px] lg:h-[40px] flex items-center justify-center">Desativada</p>
+              <img src={elementoPlanta} className="w-[65px] lg:w-[150px]"/>
+              <div className=" lg:w-[300px] flex justify-center items-center h-[60px] content-center">
+                <div className="bg-gray-100 rounded-2xl flex h-[35px] justify-between items-center">
+                  <p className="lg:w-[120px] w-[80px] lg:h-[40px] lg:text-[20px] text-[14px] flex items-center justify-center">Desativada</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px]">
+          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px] h-[100px] w-[150px]">
             <h3 className="lg:text-[35px] font-semibold text-gray-900 font-novicento lg:w-[260px]">Baia 5</h3>
             <div className="flex items-start lg:w-[310px]">
-              <img src={elementoPlanta} className="lg:w-[150px]"/>
-              <div className="lg:w-[300px] flex justify-center content-center">
-              <p className="bg-gray-100 rounded-2xl lg:w-[120px] lg:h-[40px] flex items-center justify-center">Desativada</p>
+              <img src={elementoPlanta} className="w-[65px] lg:w-[150px]"/>
+              <div className=" lg:w-[300px] flex justify-center items-center h-[60px] content-center">
+                <div className="bg-gray-100 rounded-2xl flex h-[35px] justify-between items-center">
+                  <p className="lg:w-[120px] w-[80px] lg:h-[40px] lg:text-[20px] text-[14px] flex items-center justify-center">Desativada</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px]">
+          <div className="bg-white rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5 flex flex-col items-center lg:w-[330px] lg:h-[180px] h-[100px] w-[150px]">
             <h3 className="lg:text-[35px] font-semibold text-gray-900 font-novicento lg:w-[260px]">Baia 6</h3>
             <div className="flex items-start lg:w-[310px]">
-              <img src={elementoPlanta} className="lg:w-[150px]"/>
-              <div className="lg:w-[300px] flex justify-center content-center">
-              <p className="bg-gray-100 rounded-2xl lg:w-[120px] lg:h-[40px] flex items-center justify-center">Desativada</p>
+              <img src={elementoPlanta} className="w-[65px] lg:w-[150px]"/>
+              <div className=" lg:w-[300px] flex justify-center items-center h-[60px] content-center">
+                <div className="bg-gray-100 rounded-2xl flex h-[35px] justify-between items-center">
+                  <p className="lg:w-[120px] w-[80px] lg:h-[40px] lg:text-[20px] text-[14px] flex items-center justify-center">Desativada</p>
+                </div>
               </div>
             </div>
           </div>
