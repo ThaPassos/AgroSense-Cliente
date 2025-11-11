@@ -34,7 +34,7 @@ export const GraficoChuva = () => {
             <div>
               <h2 className="text-2xl font-bold text-[#388a7e]">Chuva</h2>
               <p className="text-sm text-[#388a7e]">
-                Monitoramento da umidade atmosférica
+                Monitoramento da quantidade de chuva do ambiente
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export const GraficoChuva = () => {
               labelStyle={{ color: "#388a7e", fontWeight: 600 }}
               formatter={(value: number) => {
                 const formattedValue = typeof value === 'number' ? value.toFixed(1) : '0';
-                return [`${formattedValue}%`, "Umidade"];
+                return [`${formattedValue}%`, "Chuva"];
               }}
             />
             <Area
